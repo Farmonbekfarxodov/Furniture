@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--<![endif]-->
+<html lang="zxx">
+
+
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Furnitica - Minimalist Furniture HTML Template</title>
+
+    <meta name="keywords" content="Furniture, Decor, Interior">
+    <meta name="description" content="Furnitica - Minimalist Furniture HTML Template">
+    <meta name="author" content="tivatheme">
+
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/font-material/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/nivo-slider/css/nivo-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/nivo-slider/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/nivo-slider/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/owl-carousel/assets/owl.carousel.min.css' %}">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reponsive.css' %}">
+</head>
+
+<body {% block body %}{% endblock %}> 
+    {% include 'layouts/header_base.html' %}
+
+    <!-- main content -->
+    {% block content %} {% endblock %}
+
+    <!-- footer -->
+    {% include 'layouts/footer.html' %}
+
+    <!-- back top top -->
+    <div class="back-to-top">
+        <a href="#">
+            <i class="fa fa-long-arrow-up"></i>
+        </a>
+    </div>
+
+    <!-- menu mobie left -->
+    {% include 'layouts/menu-mobile-left.html'%}
+
+    <!-- menu mobie right -->
+    {% include 'layouts/menu-mobile-right.html'%}
+
+    <!-- Page Loader -->
+    <div id="page-preloader">
+        <div class="page-loading">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <!-- Vendor JS -->
+    <script src="{% static 'libs/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/popper/popper.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'libs/nivo-slider/js/jquery.nivo.slider.js' %}"></script>
+    <script src="{% static 'libs/owl-carousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template JS -->
+    <script src="{% static 'js/theme.js' %}"></script>
+</body>
+
+
+
+</html>
