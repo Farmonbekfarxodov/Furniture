@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 02:42+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: app_blogs/models.py:9 app_blogs/models.py:21 app_blogs/models.py:48
+msgid "title"
+msgstr ""
+
+#: app_blogs/models.py:11
+msgid "parent"
+msgstr "ota-ona"
+
+#: app_blogs/models.py:17
+msgid "blog category"
+msgstr "blog kategoriyasi"
+
+#: app_blogs/models.py:18
+msgid "blog categories"
+msgstr "blog kategoriyalari"
+
+#: app_blogs/models.py:28
+msgid "blog tag"
+msgstr "blog tegi"
+
+#: app_blogs/models.py:29
+msgid "blog tags"
+msgstr "blog teglar"
+
+#: app_blogs/models.py:32
+msgid "first_name"
+msgstr "ism"
+
+#: app_blogs/models.py:33
+msgid "last_name"
+msgstr "familiya"
+
+#: app_blogs/models.py:34
+msgid "avatar"
+msgstr "rasm"
+
+#: app_blogs/models.py:43
+msgid "blog author"
+msgstr "blog muallifi"
+
+#: app_blogs/models.py:44
+msgid "blog authors"
+msgstr "blog mualliflari"
+
+#: app_blogs/models.py:47 app_blogs/models.py:58
+msgid "blogs"
+msgstr "bloglar"
+
+#: app_blogs/models.py:49
+msgid "description"
+msgstr "tavsif"
+
+#: app_blogs/models.py:51
+msgid "author"
+msgstr "muallif"
+
+#: app_blogs/models.py:52
+msgid "categories"
+msgstr "kategoriyalar"
+
+#: app_blogs/models.py:57
+msgid "blog"
+msgstr "blog"
+
+#: app_blogs/models.py:61
+msgid "comment"
+msgstr "komentariya"
+
+#: app_blogs/models.py:62
+msgid "user"
+msgstr "foydalanuvchi"
+
+#: app_blogs/models.py:69
+msgid "blog comment"
+msgstr "blog komentariyasi"
+
+#: app_blogs/models.py:70
+msgid "blog comments"
+msgstr "blog komentariyalari"
