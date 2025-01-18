@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 02:42+0500\n"
+"POT-Creation-Date: 2025-01-18 06:17+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: app_blogs/models.py:9 app_blogs/models.py:21 app_blogs/models.py:48
 msgid "title"
 msgstr ""
@@ -95,4 +96,41 @@ msgstr ""
 
 #: app_blogs/models.py:70
 msgid "blog comments"
+msgstr ""
+
+#: templates/layouts/header_home.html:98
+msgid "Home"
+msgstr ""
+
+#: templates/layouts/header_home.html:102
+msgid "Blog"
+msgstr ""
+
+#: templates/layouts/header_home.html:106
+msgid "Contact US"
+msgstr ""
+
+#: templates/layouts/header_home.html:120
+#: templates/layouts/header_home.html:129
+msgid "My Account"
+msgstr ""
+
+#: templates/layouts/header_home.html:135
+msgid "Sign in"
+msgstr ""
+
+#: templates/layouts/header_home.html:263
+msgid ""
+"\n"
+"                                        <div>FREE DELIVERY</div>\n"
+"                                        <div>From $ 250</div>\n"
+"                                        "
+msgstr ""
+
+#: templates/layouts/header_home.html:278
+msgid ""
+"\n"
+"                                        <div>MONEY BACK</div>\n"
+"                                        <div>GUARANTEED</div>\n"
+"                                        "
 msgstr ""
