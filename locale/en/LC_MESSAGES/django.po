@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-18 06:17+0500\n"
+"POT-Creation-Date: 2025-01-21 04:19+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,7 @@ msgstr ""
 msgid "blog authors"
 msgstr ""
 
-#: app_blogs/models.py:47 app_blogs/models.py:58
+#: app_blogs/models.py:47 app_blogs/models.py:60
 msgid "blogs"
 msgstr ""
 
@@ -78,24 +78,67 @@ msgstr ""
 msgid "categories"
 msgstr ""
 
-#: app_blogs/models.py:57
+#: app_blogs/models.py:53
+msgid "tags"
+msgstr ""
+
+#: app_blogs/models.py:59
 msgid "blog"
 msgstr ""
 
-#: app_blogs/models.py:61
+#: app_blogs/models.py:63 templates/blog/blog-list-sidebar-left.html:84
 msgid "comment"
 msgstr ""
 
-#: app_blogs/models.py:62
+#: app_blogs/models.py:64
 msgid "user"
 msgstr ""
 
-#: app_blogs/models.py:69
+#: app_blogs/models.py:65
+msgid "comments"
+msgstr ""
+
+#: app_blogs/models.py:71
 msgid "blog comment"
 msgstr ""
 
-#: app_blogs/models.py:70
+#: app_blogs/models.py:72
 msgid "blog comments"
+msgstr ""
+
+#: templates/blog/blog-list-sidebar-left.html:140
+msgid "minutes ago"
+msgstr ""
+
+#: templates/blog/blog-list-sidebar-left.html:141
+msgid "Comments"
+msgstr ""
+
+#: templates/layouts/header_base.html:140
+msgid "Account"
+msgstr ""
+
+#: templates/layouts/header_base.html:149
+#: templates/layouts/header_home.html:123
+#: templates/layouts/header_home.html:132
+msgid "My Account"
+msgstr ""
+
+#: templates/layouts/header_base.html:155
+#: templates/layouts/header_home.html:138
+msgid "Sign in"
+msgstr ""
+
+#: templates/layouts/header_base.html:161
+msgid "Register Account"
+msgstr ""
+
+#: templates/layouts/header_base.html:167
+msgid "Checkout"
+msgstr ""
+
+#: templates/layouts/header_base.html:173
+msgid "My Wishlists"
 msgstr ""
 
 #: templates/layouts/header_home.html:98
@@ -110,16 +153,11 @@ msgstr ""
 msgid "Contact US"
 msgstr ""
 
-#: templates/layouts/header_home.html:120
-#: templates/layouts/header_home.html:129
-msgid "My Account"
+#: templates/layouts/header_home.html:109
+msgid "Shop"
 msgstr ""
 
-#: templates/layouts/header_home.html:135
-msgid "Sign in"
-msgstr ""
-
-#: templates/layouts/header_home.html:263
+#: templates/layouts/header_home.html:266
 msgid ""
 "\n"
 "                                        <div>FREE DELIVERY</div>\n"
@@ -127,7 +165,7 @@ msgid ""
 "                                        "
 msgstr ""
 
-#: templates/layouts/header_home.html:278
+#: templates/layouts/header_home.html:281
 msgid ""
 "\n"
 "                                        <div>MONEY BACK</div>\n"

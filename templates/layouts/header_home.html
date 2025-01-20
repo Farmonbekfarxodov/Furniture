@@ -105,6 +105,9 @@
                             <li>
                                 <a href="{% url 'pages:contact'%}" class="parent">{% trans 'Contact US'%}</a>
                             </li>
+                            <li>
+                                <a href="{% url 'app_products:product'%}" class="parent">{% trans 'Shop'%}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -220,7 +223,7 @@
                                         
                                         <span>{% get_lang_flag language.0 %}{{language.0|upper}}</span>
                                     </a>
-                                </div>
+                                </div> 
                                 {% endfor %}
                         </div>
                     </div>

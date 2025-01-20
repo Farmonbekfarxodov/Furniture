@@ -32,12 +32,12 @@ class BlogAuthorModel(BaseModel):
     first_name = models.CharField(max_length=128 , verbose_name=_('first_name'))
     last_name = models.CharField(max_length=128, verbose_name=_('last_name'))
     avatar = models.ImageField(upload_to='blogs/authors/', verbose_name = _('avatar'))
-
+    @property
     def get_full_name(self):
         return f"{self.first_name}{self.last_name}"
     
     def __str__(self):
-        return self.get_full_name()
+        return self.get_full_name
     
     class Meta:
         verbose_name = _('blog author')
@@ -50,6 +50,8 @@ class BlogModel(BaseModel):
 
     author = models.ManyToManyField(BlogAuthorModel,related_name='blogs' , verbose_name=_('author'))
     categories = models.ManyToManyField(BlogCategoryModel,related_name='blogs', verbose_name=_('categories'))
+    tags = models.ManyToManyField(BlogTagModel,related_name='tags',verbose_name=_('tags'))
+    
     def __str__(self):
         return self.title
     
@@ -60,7 +62,7 @@ class BlogModel(BaseModel):
 class BlogCommentModel(BaseModel):
     comment = models.CharField(max_length=128 , verbose_name=_('comment'))
     user = models.ForeignKey(UserModel,on_delete=models.CASCADE,related_name='blog_comments',verbose_name=_('user'))
-
+    blog = models.ForeignKey(BlogModel,on_delete=models.CASCADE,related_name='comments',verbose_name=_('comments'),null=True)
 
     def __str__(self):
         return self.user.username

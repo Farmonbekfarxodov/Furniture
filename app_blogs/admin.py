@@ -1,4 +1,5 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
 from .models import (
     BlogCategoryModel,
     BlogTagModel,
@@ -7,22 +8,32 @@ from .models import (
     BlogCommentModel,
 )
 
+class MyTranslationAdmin(TranslationAdmin):
+        class Media:
+            js = (
+                'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+                'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+                'modeltranslation/js/tabbed_translation_fields.js',
+            )
+            css = {
+                'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+            }
 
 @admin.register(BlogCategoryModel)
-class BlogCategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'parent')
+class BlogCategoryAdmin(MyTranslationAdmin):
+    list_display = ('id', 'title', 'parent',)
     search_fields = ('title',)
     list_filter = ('parent',)
 
 
 @admin.register(BlogTagModel)
-class BlogTagAdmin(admin.ModelAdmin):
+class BlogTagAdmin(MyTranslationAdmin):
     list_display = ('id', 'title')
     search_fields = ('title',)
 
 
 @admin.register(BlogAuthorModel)
-class BlogAuthorAdmin(admin.ModelAdmin):
+class BlogAuthorAdmin(MyTranslationAdmin):
     list_display = ('id', 'get_full_name', 'avatar')
     search_fields = ('first_name', 'last_name')
 
@@ -31,8 +42,8 @@ class BlogAuthorAdmin(admin.ModelAdmin):
     get_full_name.short_description = "Full Name"
 
 @admin.register(BlogModel)
-class BlogAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'image', 'description')
+class BlogAdmin(MyTranslationAdmin):
+    list_display = ('id', 'title', 'image', 'created_at')
     search_fields = ('title',)
     list_filter = ('categories', 'author')
 

@@ -1,6 +1,7 @@
 {% extends 'layouts/base.html'%}
 {% load static %}
 {% block body %} id="blog-list-sidebar-left" class="blog" {% endblock %}
+{% load i18n %}
 {% block content %}
 <div class="main-content">
     <div id="wrapper-site">
@@ -40,143 +41,32 @@
                                     <!-- category -->
                                     <div class="sidebar-block">
                                         <div class="title-block">Categories</div>
+                                        
                                         <div class="block-content">
+                                            {% for category in categories %}
+                                                {% if category.parent %}
+
+                                                {% else %}        
                                             <div class="cateTitle hasSubCategory open level1">
-                                                <span class="arrow collapse-icons collapsed" data-toggle="collapse" data-target="#livingroom" aria-expanded="false" role="status">
+                                                <span class="arrow collapse-icons collapsed" data-toggle="collapse" data-target="#{{ category.id }}" aria-expanded="false" role="status">
                                                     <i class="zmdi zmdi-minus"></i>
                                                     <i class="zmdi zmdi-plus"></i>
                                                 </span>
-                                                <a class="cateItem" href="#">Living Room</a>
-                                                <div class="subCategory collapse" id="livingroom" aria-expanded="true" role="status">
+                                                <a class="cateItem" href="?category={{ category.id }}">{{ category.title}}</a>
+                                                <div class="subCategory collapse" id="{{ category.id }}" aria-expanded="true" role="status">
+                                                    
+                                                    {% for child in category.children.all %}
                                                     <div class="cateTitle">
-                                                        <a href="#" class="cateItem">Side Table</a>
-                                                        <div class="subCategory collapse" id="subCategory-fruits" aria-expanded="true" role="status">
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">Side Table</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">FIREPLACE</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">FIREPLACE</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">floor lamp</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">ottoman</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">armchair</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">cushion</a>
-                                                            </div>
-                                                        </div>
+                                                        <a href="?category={{ child.id }}" class="cateItem">{{ child.title }}</a>
                                                     </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">FIREPLACE</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">FIREPLACE</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">floor lamp</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">ottoman</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">armchair</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">cushion</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cateTitle hasSubCategory open level1">
-                                                <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#bathroom" aria-expanded="false" role="status">
-                                                    <i class="zmdi zmdi-minus"></i>
-                                                    <i class="zmdi zmdi-plus"></i>
-                                                </span>
-                                                <a class="cateItem" href="#">Bathroom</a>
-                                                <div class="subCategory collapse" id="bathroom" aria-expanded="false" role="status">
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">TOMATO</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">BROCCOLI</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">CABBAGE</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">CUCUMBER</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">EGGPLANT</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cateTitle hasSubCategory open level1">
-                                                <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#diningroom" aria-expanded="false" role="status">
-                                                    <i class="zmdi zmdi-minus"></i>
-                                                    <i class="zmdi zmdi-plus"></i>
-                                                </span>
-                                                <a class="cateItem" href="#">Dining Rooom</a>
-                                                <div class="subCategory collapse" id="diningroom" aria-expanded="true" role="status">
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">DRY BREAD</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">BREAD SLICES</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">FRENCH BREAD</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">BLACK BREAD</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cateTitle hasSubCategory open level1">
-                                                <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#bedroom" aria-expanded="false" role="status">
-                                                    <i class="zmdi zmdi-minus"></i>
-                                                    <i class="zmdi zmdi-plus"></i>
-                                                </span>
-                                                <a class="cateItem" href="#">BedRoom</a>
-                                                <div class="subCategory collapse" id="bedroom" aria-expanded="true" role="status">
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">ORANGE JUICES</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">TOMATO JUICES</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">APPLE JUICES</a>
-                                                    </div>
+                                                    {% endfor %}
 
                                                 </div>
+                                                
                                             </div>
-                                            <div class="cateTitle hasSubCategory open level1">
-                                                <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#kitchen" aria-expanded="false" role="status">
-                                                    <i class="zmdi zmdi-minus"></i>
-                                                    <i class="zmdi zmdi-plus"></i>
-                                                </span>
-                                                <a class="cateItem" href="#">Kitchen</a>
-                                                <div class="subCategory collapse" id="kitchen" aria-expanded="true" role="status">
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">ORANGE JUICES</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">TOMATO JUICES</a>
-                                                    </div>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">APPLE JUICES</a>
-                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
 
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
 
@@ -184,44 +74,26 @@
                                     <div class="sidebar-block">
                                         <div class="title-block">Recent Posts</div>
                                         <div class="post-item-content">
+                                            {% for recent_blog in recent_blog %}
                                             <div>
                                                 <div class="late-item first-child">
                                                     <a href="blog-detail.html">
-                                                        <p class="content-title">Lorem ipsum dolor sit amet</p>
+                                                        <p class="content-title">{{ recent_blog.title}}</p>
                                                     </a>
                                                     <span>
-                                                        <i class="zmdi zmdi-comments"></i>13 comment
+                                                        <i class="zmdi zmdi-comments"></i>{{recent_blog.comments.count}} {% trans 'comment'%}
                                                     </span>
                                                     <span>
-                                                        <i class="zmdi zmdi-calendar-note"></i>20 APRIl 2017
+                                                        <i class="zmdi zmdi-calendar-note"></i>{{ recent_blog.created_at|date:'d M Y'}}
                                                     </span>
-                                                    <p class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                        nonummy...
+                                                    <p class="description">{{ recent_blog.description|slice:'50'}}
                                                     </p>
                                                     <p class="remove">
                                                         <a href="blog-detail.html">READ MORE</a>
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <div class="late-item">
-                                                    <a href="blog-detail.html">
-                                                        <p class="content-title">Lorem ipsum dolor sit amet</p>
-                                                    </a>
-                                                    <span>
-                                                        <i class="zmdi zmdi-comments"></i>13 comment
-                                                    </span>
-                                                    <span>
-                                                        <i class="zmdi zmdi-calendar-note"></i>20 APRIl 2017
-                                                    </span>
-                                                    <p class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                        nonummy...
-                                                    </p>
-                                                    <p class="remove">
-                                                        <a href="blog-detail.html">READ MORE</a>
-                                                    </p>
-                                                </div>
-                                            </div>
+                                            {% endfor %}
                                         </div>
                                     </div>
 
@@ -232,49 +104,11 @@
                                         </div>
                                         <div class="block-content">
                                             <ul class="listSidebarBlog list-unstyled">
+                                                {% for tag in tags %}
                                                 <li>
-                                                    <a href="#" title="Show products matching tag Hot Trend">Hot Trend</a>
+                                                    <a href="?tag={{tag.id}}" title="Show products matching tag Hot Trend">{{ tag.title }}</a>
                                                 </li>
-
-                                                <li>
-                                                    <a href="#" title="Show products matching tag Jewelry">Jewelry</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="man.html" title="Show products matching tag Man">Man</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" title="Show products matching tag Party">Party</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" title="Show products matching tag SamSung">SamSung</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" title="Show products matching tag Shirt Dresses">Shirt Dresses</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" title="Show products matching tag Shoes">Shoes</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" title="Show products matching tag Summer">Summer</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" title="Show products matching tag Sweaters">Sweaters</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" title="Show products matching tag Winter">Winter</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" title="Show products matching tag Woman">Woman</a>
-                                                </li>
+                                                {% endfor %}
                                             </ul>
                                         </div>
                                     </div>
@@ -291,150 +125,32 @@
                                 </div>
                                 <div class="col-sm-8 col-lg-9 col-md-9 flex-xs-first main-blogs">
                                     <h2>Recent Posts</h2>
+                                    {% for  blog in blogs %}
                                     <div class="list-content row">
                                         <div class="hover-after col-md-5 col-xs-12">
                                             <a href="blog-detail.html">
-                                                <img src="{% static 'img/blog/4.jpg' %}" alt="img">
+                                                <img src="{{ blog.image.url }}" alt="img">
                                             </a>
                                         </div>
                                         <div class="late-item col-md-7 col-xs-12">
                                             <p class="content-title">
-                                                <a href="blog-detail.html">Lorem ipsum dolor sit amet</a>
+                                                <a href="blog-detail.html">{{ blog.title }}</a>
                                             </p>
                                             <p class="post-info">
-                                                <span>3 minitunes ago</span>
-                                                <span>113 Comments</span>
-                                                <span>TIVATHEME</span>
+                                                <span>{{ blog.created_at|date:'m'}} {% trans 'minutes ago' %}</span>
+                                                <span>{{ blog.comments.count}} {% trans 'Comments' %}</span>
+                                                {% for author in blog.author.all %}
+                                                <span>{{ author.get_full_name}}</span>
+                                                {% endfor %}
                                             </p>
-                                            <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin, lorem quis
-                                                bibendum auctor, nisi elit consequat ipsum, elit. Duis sed odio sit amet
-                                                nibh vultate cursus a sit amet mauris. Proin gravida...
+                                            <p class="description">{{ blog.description|slice:'200' }}
                                             </p>
                                             <span class="view-more">
                                                 <a href="blog-detail.html">view more</a>
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="list-content row">
-                                        <div class="hover-after col-md-5 col-xs-12">
-                                            <a href="blog-detail.html">
-                                                <img src="{% static 'img/blog/5.jpg' %}" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="late-item col-md-7 col-xs-12">
-                                            <p class="content-title">
-                                                <a href="blog-detail.html">Lorem ipsum dolor sit amet</a>
-                                            </p>
-                                            <p class="post-info">
-                                                <span>3 minitunes ago</span>
-                                                <span>113 Comments</span>
-                                                <span>TIVATHEME</span>
-                                            </p>
-                                            <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin, lorem quis
-                                                bibendum auctor, nisi elit consequat ipsum, elit. Duis sed odio sit amet
-                                                nibh vultate cursus a sit amet mauris. Proin gravida...
-                                            </p>
-                                            <span class="view-more">
-                                                <a href="blog-detail.html">view more</a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="list-content row">
-                                        <div class="hover-after col-md-5 col-xs-12">
-                                            <a href="blog-detail.html">
-                                                <img src="{% static 'img/blog/6.jpg' %}" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="late-item  col-md-7 col-xs-12">
-                                            <p class="content-title">
-                                                <a href="blog-detail.html">Lorem ipsum dolor sit amet</a>
-                                            </p>
-                                            <p class="post-info">
-                                                <span>3 minitunes ago</span>
-                                                <span>113 Comments</span>
-                                                <span>TIVATHEME</span>
-                                            </p>
-                                            <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin, lorem quis
-                                                bibendum auctor, nisi elit consequat ipsum, elit. Duis sed odio sit amet
-                                                nibh vultate cursus a sit amet mauris. Proin gravida...
-                                            </p>
-                                            <span class="view-more">
-                                                <a href="blog-detail.html">view more</a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="list-content row">
-                                        <div class="hover-after col-md-5 col-xs-12">
-                                            <a href="blog-detail.html">
-                                                <img src="{% static 'img/blog/7.jpg' %}" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="late-item col-md-7 col-xs-12">
-                                            <p class="content-title">
-                                                <a href="blog-detail.html">Lorem ipsum dolor sit amet</a>
-                                            </p>
-                                            <p class="post-info">
-                                                <span>3 minitunes ago</span>
-                                                <span>113 Comments</span>
-                                                <span>TIVATHEME</span>
-                                            </p>
-                                            <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin, lorem quis
-                                                bibendum auctor, nisi elit consequat ipsum, elit. Duis sed odio sit amet
-                                                nibh vultate cursus a sit amet mauris. Proin gravida...
-                                            </p>
-                                            <span class="view-more">
-                                                <a href="blog-detail.html">view more</a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="list-content row">
-                                        <div class="hover-after col-md-5 col-xs-12">
-                                            <a href="blog-detail.html">
-                                                <img src="{% static 'img/blog/8.jpg' %}" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="late-item col-md-7 col-xs-12">
-                                            <p class="content-title">
-                                                <a href="blog-detail.html">Lorem ipsum dolor sit amet</a>
-                                            </p>
-                                            <p class="post-info">
-                                                <span>3 minitunes ago</span>
-                                                <span>113 Comments</span>
-                                                <span>TIVATHEME</span>
-                                            </p>
-                                            <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin, lorem quis
-                                                bibendum auctor, nisi elit consequat ipsum, elit. Duis sed odio sit amet
-                                                nibh vultate cursus a sit amet mauris. Proin gravida...
-                                            </p>
-                                            <span class="view-more">
-                                                <a href="blog-detail.html">view more</a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="list-content row">
-                                        <div class="hover-after col-md-5 col-xs-12">
-                                            <a href="blog-detail.html">
-                                                <img src="{% static 'img/blog/9.jpg' %}" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="late-item  col-md-7 col-xs-12">
-                                            <p class="content-title">
-                                                <a href="blog-detail.html">Lorem ipsum dolor sit amet</a>
-                                            </p>
-                                            <p class="post-info">
-                                                <span>3 minitunes ago</span>
-                                                <span>113 Comments</span>
-                                                <span>TIVATHEME</span>
-                                            </p>
-                                            <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin, lorem quis
-                                                bibendum auctor, nisi elit consequat ipsum, elit. Duis sed odio sit amet
-                                                nibh vultate cursus a sit amet mauris. Proin gravida...
-                                            </p>
-                                            <span class="view-more">
-                                                <a href="blog-detail.html">view more</a>
-                                            </span>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                     <div class="page-list col">
                                         <ul class="justify-content-center d-flex">
                                             <li>
@@ -459,6 +175,7 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
