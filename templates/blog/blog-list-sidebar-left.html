@@ -77,7 +77,7 @@
                                             {% for recent_blog in recent_blog %}
                                             <div>
                                                 <div class="late-item first-child">
-                                                    <a href="blog-detail.html">
+                                                    <a href="{% url 'blogs:detail' pk=recent_blog.id %}">
                                                         <p class="content-title">{{ recent_blog.title}}</p>
                                                     </a>
                                                     <span>
@@ -89,7 +89,7 @@
                                                     <p class="description">{{ recent_blog.description|slice:'50'}}
                                                     </p>
                                                     <p class="remove">
-                                                        <a href="blog-detail.html">READ MORE</a>
+                                                        <a href="{% url 'blogs:detail' pk=recent_blog.id %}">READ MORE</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -106,7 +106,7 @@
                                             <ul class="listSidebarBlog list-unstyled">
                                                 {% for tag in tags %}
                                                 <li>
-                                                    <a href="?tag={{tag.id}}" title="Show products matching tag Hot Trend">{{ tag.title }}</a>
+                                                    <a href="?tag={{ tag.id }}" title="Show products matching tag Hot Trend">{{ tag.title }}</a>
                                                 </li>
                                                 {% endfor %}
                                             </ul>
@@ -128,13 +128,13 @@
                                     {% for  blog in blogs %}
                                     <div class="list-content row">
                                         <div class="hover-after col-md-5 col-xs-12">
-                                            <a href="blog-detail.html">
+                                            <a href="{% url 'blogs:detail' pk=blog.id %}">
                                                 <img src="{{ blog.image.url }}" alt="img">
                                             </a>
                                         </div>
                                         <div class="late-item col-md-7 col-xs-12">
                                             <p class="content-title">
-                                                <a href="blog-detail.html">{{ blog.title }}</a>
+                                                <a href="{% url 'blogs:detail' pk=blog.id %}">{{ blog.title }}</a>
                                             </p>
                                             <p class="post-info">
                                                 <span>{{ blog.created_at|date:'m'}} {% trans 'minutes ago' %}</span>
@@ -146,7 +146,7 @@
                                             <p class="description">{{ blog.description|slice:'200' }}
                                             </p>
                                             <span class="view-more">
-                                                <a href="blog-detail.html">view more</a>
+                                                <a href="{% url 'blogs:detail' pk=blog.id %}">view more</a>
                                             </span>
                                         </div>
                                     </div>
