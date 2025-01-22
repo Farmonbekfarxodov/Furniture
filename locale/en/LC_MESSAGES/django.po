@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-21 04:19+0500\n"
+"POT-Creation-Date: 2025-01-23 00:13+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: app_blogs/models.py:9 app_blogs/models.py:21 app_blogs/models.py:48
+#: app_products/models.py:18 app_products/models.py:56
 msgid "title"
 msgstr ""
 
-#: app_blogs/models.py:11
+#: app_blogs/models.py:11 app_products/models.py:23
 msgid "parent"
 msgstr ""
 
@@ -66,7 +67,7 @@ msgstr ""
 msgid "blogs"
 msgstr ""
 
-#: app_blogs/models.py:49
+#: app_blogs/models.py:49 app_products/models.py:58
 msgid "description"
 msgstr ""
 
@@ -74,11 +75,11 @@ msgstr ""
 msgid "author"
 msgstr ""
 
-#: app_blogs/models.py:52
+#: app_blogs/models.py:52 app_products/models.py:76
 msgid "categories"
 msgstr ""
 
-#: app_blogs/models.py:53
+#: app_blogs/models.py:53 app_products/models.py:70
 msgid "tags"
 msgstr ""
 
@@ -106,6 +107,110 @@ msgstr ""
 msgid "blog comments"
 msgstr ""
 
+#: app_products/admin.py:38
+msgid "Product Image"
+msgstr ""
+
+#: app_products/admin.py:39
+msgid "Product Images"
+msgstr ""
+
+#: app_products/models.py:7
+msgid "code"
+msgstr ""
+
+#: app_products/models.py:8 app_products/models.py:34 app_products/models.py:45
+msgid "name"
+msgstr ""
+
+#: app_products/models.py:14
+msgid "color"
+msgstr ""
+
+#: app_products/models.py:15 app_products/models.py:64
+msgid "colors"
+msgstr ""
+
+#: app_products/models.py:30
+msgid "product category"
+msgstr ""
+
+#: app_products/models.py:31
+msgid "products categories "
+msgstr ""
+
+#: app_products/models.py:41
+msgid "product tag"
+msgstr ""
+
+#: app_products/models.py:42
+msgid "products tags"
+msgstr ""
+
+#: app_products/models.py:51
+msgid "product size"
+msgstr ""
+
+#: app_products/models.py:52
+msgid "products sizes"
+msgstr ""
+
+#: app_products/models.py:54
+msgid "image1"
+msgstr ""
+
+#: app_products/models.py:55
+msgid "image2"
+msgstr ""
+
+#: app_products/models.py:57
+msgid "price"
+msgstr ""
+
+#: app_products/models.py:59
+msgid "sku"
+msgstr ""
+
+#: app_products/models.py:82
+msgid "sizes"
+msgstr ""
+
+#: app_products/models.py:89
+msgid "Product"
+msgstr ""
+
+#: app_products/models.py:90
+msgid "Products"
+msgstr ""
+
+#: app_products/models.py:95
+msgid "product"
+msgstr ""
+
+#: app_products/models.py:98
+msgid "image"
+msgstr ""
+
+#: pages/models.py:9
+msgid "full_name"
+msgstr ""
+
+#: pages/models.py:10 pages/models.py:12
+msgid "message"
+msgstr ""
+
+#: pages/models.py:11
+msgid "subject"
+msgstr ""
+
+#: pages/models.py:19
+msgid "contact"
+msgstr ""
+
+#: pages/models.py:20
+msgid "contacts"
+msgstr ""
+
 #: templates/blog/blog-list-sidebar-left.html:140
 msgid "minutes ago"
 msgstr ""
@@ -114,34 +219,35 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: templates/layouts/header_base.html:140
+#: templates/layouts/header_base.html:143
 msgid "Account"
 msgstr ""
 
-#: templates/layouts/header_base.html:149
-#: templates/layouts/header_home.html:123
-#: templates/layouts/header_home.html:132
+#: templates/layouts/header_base.html:152
+#: templates/layouts/header_home.html:130
+#: templates/layouts/header_home.html:139
 msgid "My Account"
 msgstr ""
 
-#: templates/layouts/header_base.html:155
-#: templates/layouts/header_home.html:138
+#: templates/layouts/header_base.html:158
+#: templates/layouts/header_home.html:145
 msgid "Sign in"
 msgstr ""
 
-#: templates/layouts/header_base.html:161
+#: templates/layouts/header_base.html:164
 msgid "Register Account"
 msgstr ""
 
-#: templates/layouts/header_base.html:167
+#: templates/layouts/header_base.html:170
 msgid "Checkout"
 msgstr ""
 
-#: templates/layouts/header_base.html:173
+#: templates/layouts/header_base.html:176
 msgid "My Wishlists"
 msgstr ""
 
 #: templates/layouts/header_home.html:98
+#: templates/product/product-grid-sidebar-left.html:18
 msgid "Home"
 msgstr ""
 
@@ -149,15 +255,15 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-#: templates/layouts/header_home.html:106
-msgid "Contact US"
-msgstr ""
-
-#: templates/layouts/header_home.html:109
+#: templates/layouts/header_home.html:107
 msgid "Shop"
 msgstr ""
 
-#: templates/layouts/header_home.html:266
+#: templates/layouts/header_home.html:112
+msgid "Contact US"
+msgstr ""
+
+#: templates/layouts/header_home.html:273
 msgid ""
 "\n"
 "                                        <div>FREE DELIVERY</div>\n"
@@ -165,10 +271,18 @@ msgid ""
 "                                        "
 msgstr ""
 
-#: templates/layouts/header_home.html:281
+#: templates/layouts/header_home.html:288
 msgid ""
 "\n"
 "                                        <div>MONEY BACK</div>\n"
 "                                        <div>GUARANTEED</div>\n"
 "                                        "
+msgstr ""
+
+#: templates/product/product-grid-sidebar-left.html:34
+msgid "Categories"
+msgstr ""
+
+#: templates/product/product-grid-sidebar-left.html:176
+msgid "Catalog"
 msgstr ""

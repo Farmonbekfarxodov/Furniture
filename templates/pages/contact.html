@@ -12,12 +12,12 @@
                     <div class="breadcrumb">
                         <ol>
                             <li>
-                                <a href="#">
+                                <a href="{% url 'pages:home'%}">
                                     <span>Home</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{% url 'pages:contact'%}">
                                     <span>Contact</span>
                                 </a>
                             </li>
@@ -103,19 +103,27 @@
                                 <div class="d-flex justify-content-center">
                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                         <div class="contact-form">
-                                            <form action="#" method="post" enctype="multipart/form-data">
+                                            <form action="{% url 'pages:contact'%}" method="post" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                {% if messages %}
+                                                    {% for message in messages %}
+                                                        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                                                            {{ message }}
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endif %}
                                                 <div class="form-fields">
                                                     <div class="form-group row">
                                                         <div class="col-md-6">
-                                                            <input class="form-control" name="name" placeholder="Your name">
+                                                            <input class="form-control" name="full_name" placeholder="Your fullname">
                                                         </div>
                                                         <div class="col-md-6 margin-bottom-mobie">
-                                                            <input class="form-control" name="from" type="email" value="" placeholder="Your email">
+                                                            <input class="form-control" name="email" type="email" value="" placeholder="Your email">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <div class="col-md-12 margin-bottom-mobie">
-                                                            <input class="form-control" name="from" type="email" value="" placeholder="Subject">
+                                                            <input class="form-control" name="subject" type="text" value="" placeholder="Subject">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

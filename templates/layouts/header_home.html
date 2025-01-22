@@ -102,11 +102,18 @@
                                 <a href="{% url 'blogs:blog'%}" class="parent">{% trans 'Blog' %}</a>
                                 
                             </li>
+                            
                             <li>
-                                <a href="{% url 'pages:contact'%}" class="parent">{% trans 'Contact US'%}</a>
+                                    <a href="{% url 'products:products'%}" class="parent">{% trans 'Shop'%}</a>
                             </li>
+                           
+                           
                             <li>
-                                <a href="{% url 'app_products:product'%}" class="parent">{% trans 'Shop'%}</a>
+                                <a href="{% url 'pages:contact' %}" class="parent">{% trans 'Contact US'%}</a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'pages:about'% }" class="parent">About</a>
                             </li>
                         </ul>
                     </div>

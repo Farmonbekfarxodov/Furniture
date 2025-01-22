@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-18 06:18+0500\n"
+"POT-Creation-Date: 2025-01-23 00:13+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: app_blogs/models.py:9 app_blogs/models.py:21 app_blogs/models.py:48
+#: app_products/models.py:18 app_products/models.py:56
 msgid "title"
 msgstr ""
 
-#: app_blogs/models.py:11
+#: app_blogs/models.py:11 app_products/models.py:23
 msgid "parent"
 msgstr "ota-ona"
 
@@ -62,11 +63,11 @@ msgstr "blog muallifi"
 msgid "blog authors"
 msgstr "blog mualliflari"
 
-#: app_blogs/models.py:47 app_blogs/models.py:58
+#: app_blogs/models.py:47 app_blogs/models.py:60
 msgid "blogs"
 msgstr "bloglar"
 
-#: app_blogs/models.py:49
+#: app_blogs/models.py:49 app_products/models.py:58
 msgid "description"
 msgstr "tavsif"
 
@@ -74,31 +75,211 @@ msgstr "tavsif"
 msgid "author"
 msgstr "muallif"
 
-#: app_blogs/models.py:52
+#: app_blogs/models.py:52 app_products/models.py:76
 msgid "categories"
 msgstr "kategoriyalar"
 
-#: app_blogs/models.py:57
+#: app_blogs/models.py:53 app_products/models.py:70
+#, fuzzy
+#| msgid "blog tags"
+msgid "tags"
+msgstr "blog teglar"
+
+#: app_blogs/models.py:59
 msgid "blog"
 msgstr "blog"
 
-#: app_blogs/models.py:61
+#: app_blogs/models.py:63 templates/blog/blog-list-sidebar-left.html:84
 msgid "comment"
 msgstr "komentariya"
 
-#: app_blogs/models.py:62
+#: app_blogs/models.py:64
 msgid "user"
 msgstr "foydalanuvchi"
 
-#: app_blogs/models.py:69
+#: app_blogs/models.py:65
+#, fuzzy
+#| msgid "comment"
+msgid "comments"
+msgstr "komentariya"
+
+#: app_blogs/models.py:71
 msgid "blog comment"
 msgstr "blog komentariyasi"
 
-#: app_blogs/models.py:70
+#: app_blogs/models.py:72
 msgid "blog comments"
 msgstr "blog komentariyalari"
 
+#: app_products/admin.py:38
+msgid "Product Image"
+msgstr "Produkt Surati"
+
+#: app_products/admin.py:39
+msgid "Product Images"
+msgstr "Produkt Rasmlari"
+
+#: app_products/models.py:7
+msgid "code"
+msgstr "kod"
+
+#: app_products/models.py:8 app_products/models.py:34 app_products/models.py:45
+msgid "name"
+msgstr "ism"
+
+
+msgid "last_name"
+msgstr "familiya"
+
+#: app_products/models.py:14
+msgid "color"
+msgstr "rang"
+
+#: app_products/models.py:15 app_products/models.py:64
+msgid "colors"
+msgstr "ranglar"
+
+#: app_products/models.py:30
+msgid "product category"
+msgstr "produkt kategoriyasi"
+
+msgid "blog category"
+msgstr "blog kategoriyasi"
+
+#: app_products/models.py:31
+msgid "products categories "
+msgstr "produkt kategoriyalari"
+
+msgid "blog categories"
+msgstr "blog kategoriyalari"
+
+#: app_products/models.py:41
+msgid "product tag"
+msgstr "produkt teglari"
+
+#: app_products/models.py:42
+msgid "products tags"
+msgstr "produkt teglari"
+
+#: app_products/models.py:51
+msgid "product size"
+msgstr "mahsulot o'lchami"
+
+#: app_products/models.py:52
+msgid "products sizes"
+msgstr "mahsulotlar o'lchamlari"
+
+#: app_products/models.py:54
+msgid "image1"
+msgstr "rams1"
+
+#: app_products/models.py:55
+msgid "image2"
+msgstr "rasm2"
+
+#: app_products/models.py:57
+msgid "price"
+msgstr "narx"
+
+#: app_products/models.py:59
+msgid "sku"
+msgstr "sku"
+
+#: app_products/models.py:82
+msgid "sizes"
+msgstr "o'lchamlar"
+
+#: app_products/models.py:89
+msgid "Product"
+msgstr "Mahsulot"
+
+#: app_products/models.py:90
+msgid "Products"
+msgstr "Mahsulotlar"
+
+#: app_products/models.py:95
+msgid "product"
+msgstr "mahsulot"
+
+#: app_products/models.py:98
+msgid "image"
+msgstr "rasm"
+
+#: pages/models.py:9
+msgid "full_name"
+msgstr "familiya"
+
+msgid "last_name"
+msgstr "familiya"
+
+#: pages/models.py:10 pages/models.py:12
+msgid "message"
+msgstr "xabar"
+
+#: pages/models.py:11
+msgid "subject"
+msgstr "izoh"
+
+#: pages/models.py:19
+msgid "Contact US"
+msgstr "BIZNING KONTAKT"
+
+msgid "contact"
+msgstr "kontakt"
+
+#: pages/models.py:20
+msgid "Contact US"
+msgstr "BIZNING KONTAKT"
+
+msgid "contacts"
+msgstr "kontaktlar"
+
+#: templates/blog/blog-list-sidebar-left.html:140
+msgid "minutes ago"
+msgstr "minut oldin"
+
+#: templates/blog/blog-list-sidebar-left.html:141
+msgid "comment"
+msgstr "komentariya"
+
+msgid "Comments"
+msgstr "Kommentariyalar"
+
+#: templates/layouts/header_base.html:143
+msgid "My Account"
+msgstr "Shaxsiy kabinet"
+
+msgid "Account"
+msgstr "Akkount"
+
+#: templates/layouts/header_base.html:152
+#: templates/layouts/header_home.html:130
+#: templates/layouts/header_home.html:139
+msgid "My Account"
+msgstr "Shaxsiy kabinet"
+
+#: templates/layouts/header_base.html:158
+#: templates/layouts/header_home.html:145
+msgid "Sign in"
+msgstr "Kirish"
+
+#: templates/layouts/header_base.html:164
+msgid "My Account"
+msgstr "Shaxsiy kabinet"
+
+msgid "Register Account"
+msgstr "Ro'yxatdan o'tish"
+
+#: templates/layouts/header_base.html:170
+msgid "Checkout"
+msgstr "Tekshirish"
+
+#: templates/layouts/header_base.html:176
+msgid "My Wishlists"
+msgstr "Maslahatlarim"
+
 #: templates/layouts/header_home.html:98
+#: templates/product/product-grid-sidebar-left.html:18
 msgid "Home"
 msgstr "Asosiy"
 
@@ -106,43 +287,27 @@ msgstr "Asosiy"
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/layouts/header_home.html:106
+#: templates/layouts/header_home.html:107
+msgid "Shop"
+msgstr "Magazin"
+
+#: templates/layouts/header_home.html:112
 msgid "Contact US"
 msgstr "BIZNING KONTAKT"
 
-#: templates/layouts/header_home.html:120
-#: templates/layouts/header_home.html:129
-msgid "My Account"
-msgstr "Shaxsiy kabinet"
-
-#: templates/layouts/header_home.html:135
-msgid "Sign in"
-msgstr "Kirish"
-
-#: templates/layouts/header_home.html:263
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                                        <div>MONEY BACK</div>\n"
-#| "                                        <div>GUARANTEED</div>\n"
-#| "                                        "
+#: templates/layouts/header_home.html:273
 msgid ""
 "\n"
 "                                        <div>FREE DELIVERY</div>\n"
 "                                        <div>From $ 250</div>\n"
 "                                        "
-msgid ""
-"\n"
-"                                        <div>TEKIN YETKAZIB BERSIH</div>\n"
-"                                        <div>250$</div>\n"
-"                                        "
 msgstr ""
 "\n"
-"                                        <div>PUL</div>\n"
-"                                        <div>QAYTARILADI</div>\n"
+"                                        <div>TEKIN YETKAZISH</div>\n"
+"                                        <div>250$</div>\n"
 "                                        "
 
-#: templates/layouts/header_home.html:278
+#: templates/layouts/header_home.html:288
 msgid ""
 "\n"
 "                                        <div>MONEY BACK</div>\n"
@@ -153,3 +318,14 @@ msgstr ""
 "                                        <div>PUL</div>\n"
 "                                        <div>QAYTARILADI</div>\n"
 "                                        "
+
+#: templates/product/product-grid-sidebar-left.html:34
+msgid "categories"
+msgstr "kategoriyalar"
+
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+#: templates/product/product-grid-sidebar-left.html:176
+msgid "Catalog"
+msgstr "Katalog"

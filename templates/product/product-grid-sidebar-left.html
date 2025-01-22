@@ -1,7 +1,8 @@
 {% extends 'layouts/base.html'%}
 {% load static %}
+{% block body %} id="product-sidebar-left" class="product-grid-sidebar-left" {% endblock %}
+{% load i18n %}
 {% block content %}
-{% block body %}id="product-sidebar-left" class="product-grid-sidebar-left"{% endblock %}
 <div class="main-content">
     <div id="wrapper-site">
         <div id="content-wrapper" class="full-width">
@@ -13,20 +14,11 @@
                             <div class="breadcrumb">
                                 <ol>
                                     <li>
-                                        <a href="#">
-                                            <span>Home</span>
+                                        <a href="{% url 'pages:home'%}">
+                                            <span>{% trans 'Home'%}</span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            <span>Living Room</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span>Sofa</span>
-                                        </a>
-                                    </li>
+                                    
                                 </ol>
                             </div>
                         </div>
@@ -39,7 +31,7 @@
 
                                     <!-- category menu -->
                                     <div class="sidebar-block">
-                                        <div class="title-block">Categories</div>
+                                        <div class="title-block">{% trans 'Categories' %}</div>
                                         <div class="block-content">
                                             <div class="cateTitle hasSubCategory open level1">
                                                 <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#livingroom" aria-expanded="false" role="status">
@@ -181,7 +173,7 @@
 
                                     <!-- best seller -->
                                     <div class="sidebar-block">
-                                        <div class="title-block">Catalog</div>
+                                        <div class="title-block">{% trans 'Catalog' %}</div>
                                         <div class="new-item-content">
                                             <h3 class="title-product">categories</h3>
                                             <ul class="scroll-product">
@@ -513,8 +505,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/1.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/22.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/1.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/22.jpg' %}" alt="img">
                                                             </a>
                                                             <div class="highlighted-informations">
                                                                 <div class="variant-links">
@@ -565,8 +557,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/2.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/11.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/2.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/11.jpg' %}" alt="img">
                                                             </a>
                                                             <div class="highlighted-informations">
                                                                 <div class="variant-links">
@@ -617,8 +609,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/3.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/14.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/3.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/14.jpg' %}" alt="img">
                                                             </a>
                                                             <div class="highlighted-informations">
                                                                 <div class="variant-links">
@@ -669,8 +661,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/5.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/11.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/5.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/11.jpg' %}" alt="img">
                                                             </a>
                                                             <div class="highlighted-informations">
                                                                 <div class="variant-links">
@@ -721,8 +713,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/8.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/14.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/8.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/14.jpg' %}" alt="img">
                                                             </a>
                                                             <div class="highlighted-informations">
                                                                 <div class="variant-links">
@@ -773,8 +765,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/11.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/12.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/11.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/12.jpg' %}" alt="img">
                                                             </a>
                                                             <div class="highlighted-informations">
                                                                 <div class="variant-links">
@@ -825,8 +817,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/13.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/23.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/13.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/23.jpg' %}" alt="img">
                                                             </a>
 
                                                             <div class="highlighted-informations">
@@ -878,8 +870,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/26.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/11.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/26.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/11.jpg' %}" alt="img">
                                                             </a>
 
                                                             <div class="highlighted-informations">
@@ -931,8 +923,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/8.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/14.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/8.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/14.jpg' %}" alt="img">
                                                             </a>
                                                             <div class="highlighted-informations">
                                                                 <div class="variant-links">
@@ -983,8 +975,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/11.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/12.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/11.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/12.jpg' %}" alt="img">
                                                             </a>
                                                             <div class="highlighted-informations">
                                                                 <div class="variant-links">
@@ -1035,8 +1027,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/13.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/23.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/13.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/23.jpg' %}" alt="img">
                                                             </a>
 
                                                             <div class="highlighted-informations">
@@ -1088,8 +1080,8 @@
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
                                                             <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="{%static 'img/product/26.jpg' % }" alt="img">
-                                                                <img class="img-fluid image-secondary" src="{%static 'img/product/11.jpg' % }" alt="img">
+                                                                <img class="img-fluid image-cover" src="{% static 'img/product/26.jpg' %}" alt="img">
+                                                                <img class="img-fluid image-secondary" src="{% static 'img/product/11.jpg' %}" alt="img">
                                                             </a>
 
                                                             <div class="highlighted-informations">
@@ -1147,8 +1139,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/1.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/22.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/1.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/22.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -1205,8 +1197,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/2.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/11.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/2.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/11.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -1263,8 +1255,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/3.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/14.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/3.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/14.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -1321,8 +1313,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/5.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/11.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/5.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/11.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -1379,8 +1371,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/8.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/14.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/8.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/14.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -1437,8 +1429,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/11.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/12.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/11.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/12.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -1495,8 +1487,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/13.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/23.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/13.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/23.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
 
@@ -1554,8 +1546,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/26.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/11.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/26.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/11.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
 
@@ -1613,8 +1605,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/8.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/14.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/8.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/14.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -1671,8 +1663,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/11.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/12.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/11.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/12.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -1729,8 +1721,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/13.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/23.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/13.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/23.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
 
@@ -1788,8 +1780,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="{%static 'img/product/26.jpg' % }" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="{%static 'img/product/11.jpg' % }" alt="img">
+                                                                        <img class="img-fluid image-cover" src="{% static 'img/product/26.jpg' %}" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="{% static 'img/product/11.jpg' %}" alt="img">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -1896,4 +1888,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}
