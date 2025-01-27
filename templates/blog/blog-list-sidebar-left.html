@@ -153,28 +153,45 @@
                                     {% endfor %}
                                     <div class="page-list col">
                                         <ul class="justify-content-center d-flex">
+                                            <!-- Oldingi sahifaga havola -->
+                                            {% if page_obj.has_previous %}
                                             <li>
-                                                <a rel="prev" href="#" class="previous disabled js-search-link">
+                                                <a rel="prev" href="?page={{ page_obj.previous_page_number }}" class="previous js-search-link">
                                                     Previous
                                                 </a>
                                             </li>
-                                            <li class="current active">
-                                                <a rel="nofollow" href="#" class="disabled js-search-link">
-                                                    1
-                                                </a>
-                                            </li>
+                                            {% else %}
                                             <li>
-                                                <a rel="nofollow" href="#" class="disabled js-search-link">
-                                                    2
-                                                </a>
+                                                <span class="previous disabled">Previous</span>
                                             </li>
+                                            {% endif %}
+                                            
+                                            <!-- Sahifalar ro‘yxati -->
+                                            {% for page_num in page_obj.paginator.page_range %}
+                                            <li class="{% if page_num == page_obj.number %}current active{% endif %}">
+                                                {% if page_num == page_obj.number %}
+                                                <span>{{ page_num }}</span>
+                                                {% else %}
+                                                <a rel="nofollow" href="?page={{ page_num }}">{{ page_num }}</a>
+                                                {% endif %}
+                                            </li>
+                                            {% endfor %}
+                                            
+                                            <!-- Keyingi sahifaga havola -->
+                                            {% if page_obj.has_next %}
                                             <li>
-                                                <a rel="next" href="#" class="next disabled js-search-link">
+                                                <a rel="next" href="?page={{ page_obj.next_page_number }}" class="next js-search-link">
                                                     Next
                                                 </a>
                                             </li>
+                                            {% else %}
+                                            <li>
+                                                <span class="next disabled">Next</span>
+                                            </li>
+                                            {% endif %}
                                         </ul>
                                     </div>
+                                    
                                     
                                 </div>
                             </div>

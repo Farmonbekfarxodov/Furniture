@@ -1,5 +1,16 @@
 from django.views.generic import  ListView , DetailView
 from app_blogs.models import BlogModel , BlogTagModel,BlogCategoryModel
+from django.core.paginator import Paginator
+from django.shortcuts import render
+
+def item_list(request):
+    items = [f"Item {i}" for i in range(1, 101)]  
+    page_number = request.GET.get('page')  
+    paginator = Paginator(items, 10)  
+    page_obj = paginator.get_page(page_number)  
+    
+    return render(request, 'item_list.html', {'page_obj': page_obj})
+
 
 class BlogTemplateView(ListView):
     queryset = BlogModel.objects.filter()

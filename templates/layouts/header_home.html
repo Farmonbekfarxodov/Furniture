@@ -99,12 +99,12 @@
                                
                             </li>
                             <li>
-                                <a href="{% url 'blogs:blog'%}" class="parent">{% trans 'Blog' %}</a>
+                                <a href="{% url 'blogs:blog' %}" class="parent">{% trans 'Blog' %}</a>
                                 
                             </li>
                             
                             <li>
-                                    <a href="{% url 'products:products'%}" class="parent">{% trans 'Shop'%}</a>
+                                    <a href="{% url 'products:list' %}" class="parent">{% trans 'Shop'%}</a>
                             </li>
                            
                            
@@ -113,8 +113,9 @@
                             </li>
 
                             <li>
-                                <a href="{% url 'pages:about'% }" class="parent">About</a>
+                                <a href="{% url 'pages:about' %}" class="parent">{% trans 'About' %}</a>
                             </li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -148,19 +149,19 @@
                                 <div>
                                     <a class="register" href="user-register.html" rel="nofollow" title="Register Account">
                                         <i class="fa fa-user"></i>
-                                        <span>Register Account</span>
+                                        <span>{% trans 'Register Account'%}</span>
                                     </a>
                                 </div>
                                 <div>
                                     <a class="check-out" href="product-checkout.html" rel="nofollow" title="Checkout">
-                                        <i class="fa fa-check" aria-hidden="true"></i>Checkout
+                                        <i class="fa fa-check" aria-hidden="true"></i>{% trans 'Checkout'%}
                                     </a>
                                 </div>
 
                                 <div class="link_wishlist">
                                     <a href="user-wishlist.html" title="My Wishlists">
                                         <i class="fa fa-heart"></i>
-                                        <span>My Wishlists</span>
+                                        <span>{% trans 'My Wishlists'%}</span>
                                     </a>
                                 </div>
                                 <div id="desktop_currency_selector" class="currency-selector groups-selector hidden-sm-down">

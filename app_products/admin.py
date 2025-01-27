@@ -1,53 +1,61 @@
 from django.contrib import admin
-from django.utils.translation import gettext_lazy as _
+
 from .models import (
-    ColorModel,
     ProductCategoryModel,
     ProductTagModel,
     ProductSizeModel,
+    ProductManufactureModel,
+    ProductColorModel,
     ProductModel,
-    ProductImageModel,
+    ProductCommentModel, ProductImageModel
 )
 
-@admin.register(ColorModel)
-class ColorModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'code', 'name')
-    search_fields = ('name', 'code')
-    list_filter = ('code',)
 
 @admin.register(ProductCategoryModel)
-class ProductCategoryModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'parent')
+class ProductCategoryAdmin(admin.ModelAdmin):
+    list_display = ('title', 'parent')
     search_fields = ('title',)
     list_filter = ('parent',)
-    autocomplete_fields = ('parent',)
+
 
 @admin.register(ProductTagModel)
-class ProductTagModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
-    search_fields = ('name',)
+class ProductTagAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    search_fields = ('title',)
+
 
 @admin.register(ProductSizeModel)
-class ProductSizeModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
+class ProductSizeAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    search_fields = ('title',)
+
+
+@admin.register(ProductManufactureModel)
+class ProductManufactureAdmin(admin.ModelAdmin):
+    list_display = ('name', 'logo')
     search_fields = ('name',)
 
-class ProductImageInline(admin.TabularInline):
+
+@admin.register(ProductColorModel)
+class ProductColorAdmin(admin.ModelAdmin):
+    list_display = ('title', 'code')
+    search_fields = ('title', 'code')
+
+
+class ProductImageAdmin(admin.StackedInline):
     model = ProductImageModel
-    extra = 1
-    verbose_name = _('Product Image')
-    verbose_name_plural = _('Product Images')
+
 
 @admin.register(ProductModel)
-class ProductModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'price', 'sku')
-    search_fields = ('title', 'sku', 'description')
-    list_filter = ('categories', 'colors', 'tags', 'sizes')
-    autocomplete_fields = ('colors', 'tags', 'categories', 'sizes')
-    inlines = [ProductImageInline]
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('title', 'price', 'in_stock', 'quantity', 'discount', 'discount_price', 'sku')
+    search_fields = ('title', 'sku')
+    list_filter = ('in_stock', 'categories', 'brands')
+    filter_horizontal = ('colors', 'sizes', 'tags', 'categories')
+    inlines = [ProductImageAdmin]
 
-@admin.register(ProductImageModel)
-class ProductImageModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'product', 'image')
-    search_fields = ('product__title',)
-    autocomplete_fields = ('product',)
+
+@admin.register(ProductCommentModel)
+class ProductCommentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'product', 'comment')
+    search_fields = ('user__username', 'product__title', 'comment')
