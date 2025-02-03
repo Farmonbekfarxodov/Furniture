@@ -147,19 +147,19 @@
                         <div id="acount" class="collapse">
                             <div class="account-list-content">
                                 <div>
-                                    <a class="login" href="user-acount.html" rel="nofollow" title="Log in to your customer account">
+                                    <a class="login" href="{% url 'users:account' %}" rel="nofollow" title="Log in to your customer account">
                                         <i class="fa fa-cog"></i>
                                         <span>{% trans 'My Account'%}</span>
                                     </a>
                                 </div>
                                 <div>
-                                    <a class="login" href="user-login.html" rel="nofollow" title="Log in to your customer account">
+                                    <a class="login" href="{% url 'users:login' %}" rel="nofollow" title="Log in to your customer account">
                                         <i class="fa fa-sign-in"></i>
                                         <span>{% trans 'Sign in' %}</span>
                                     </a>
                                 </div>
                                 <div>
-                                    <a class="register" href="user-register.html" rel="nofollow" title="Register Account">
+                                    <a class="register" href="{% url 'users:register' %}" rel="nofollow" title="Register Account">
                                         <i class="fa fa-user"></i>
                                         <span>{% trans 'Register Account'%}</span>
                                     </a>
