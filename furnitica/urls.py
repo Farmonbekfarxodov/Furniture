@@ -10,7 +10,7 @@ urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('products/',include('app_products.urls',namespace='products')),
     path('blog/',include('app_blogs.urls',namespace='blogs')),
-    path('order/',include('app_orders.urls',namespace='order')),
+    path('orders/',include('app_orders.urls',namespace='orders')),
     path('users/',include('app_users.urls',namespace='users')),
     path('', include('pages.urls', namespace='pages')),
 

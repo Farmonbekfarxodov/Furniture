@@ -26,7 +26,7 @@ def add_or_remove_wishlist(request, pk):
 
 
 class UserCartListView(ListView):
-    template_name = "shop/product-cart.html"
+    template_name = "product/product-cart.html"
     context_object_name = "products"
     paginate_by = 10
 
@@ -37,7 +37,7 @@ class UserCartListView(ListView):
 
 
 class CheckoutFormView(LoginRequiredMixin, FormView):
-    template_name = "shop/product-checkout.html"
+    template_name = "product/product-checkout.html"
     form_class = CheckoutForm
     success_url = reverse_lazy("users:account")
 
