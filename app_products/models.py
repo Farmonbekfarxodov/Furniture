@@ -48,8 +48,8 @@ class ProductSizeModel(BaseModel):
 
 
 class ProductManufactureModel(BaseModel):
-        logo = models.ImageField(upload_to='brands/', null=True, blank=True, verbose_name=_('title'))
-        name = models.CharField(max_length=128, verbose_name=_('title'))
+        logo = models.ImageField(upload_to='brands/', null=True, blank=True, verbose_name=_('logo'))
+        name = models.CharField(max_length=128, verbose_name=_('name'))
 
         def __str__(self):
             return self.name
