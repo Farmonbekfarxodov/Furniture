@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load order_tags %}
 {% load my_tags %}
 <header>
     <!-- header left mobie -->
@@ -44,27 +45,30 @@
                         <div class="cart-content">
                             <table>
                                 <tbody>
+                                    {% get_user_cart request as products %}
+                                    {% for product in products %}
                                     <tr>
                                         <td class="product-image">
-                                            <a href="product-detail.html">
-                                                <img src="{% static 'img/product/5.jpg' %}" alt="Product">
+                                            <a href="{% url 'products:detail' pk=product.id %}">
+                                                <img src="{{ product.image1.url }}" alt="Product">
                                             </a>
                                         </td>
                                         <td>
                                             <div class="product-name">
-                                                <a href="{url 'products:product'}">Organic Strawberry Fruits</a>
+                                                <a href="{% url 'products:list' %}">{{ product.title|slice:'20' }}</a>
                                             </div>
                                             <div>
                                                 2 x
-                                                <span class="product-price">£28.98</span>
+                                                <span class="product-price">£{{ product.price }}</span>
                                             </div>
                                         </td>
                                         <td class="action">
-                                            <a class="remove" href="#">
+                                            <a class="remove" href="{% url 'orders:add-or-remove-cart' pk=product.id %}?next={{ request.path }}{% if request.GET.urlencode %}&{{ request.GET.urlencode }}{% endif %}">
                                                 <i class="fa fa-trash-o" aria-hidden="true"></i>
                                             </a>
                                         </td>
                                     </tr>
+                                    {% endfor %}
                                     <tr class="total">
                                         <td colspan="2">Total:</td>
                                         <td>£92.96</td>
@@ -73,8 +77,8 @@
                                     <tr>
                                         <td colspan="3" class="d-flex justify-content-center">
                                             <div class="cart-button">
-                                                <a href="product-cart.html" title="View Cart">View Cart</a>
-                                                <a href="product-checkout.html" title="Checkout">Checkout</a>
+                                                <a href="{% url 'orders:cart' %}" title="View Cart">View Cart</a>
+                                                <a href="{% url 'orders:checkout' %}" title="Checkout">Checkout</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -171,7 +175,7 @@
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="user-wishlist.html" title="My Wishlists">
+                                    <a href="{% url 'orders:wishlist' %}" title="My Wishlists">
                                         <i class="fa fa-heart"></i>
                                         <span>{% trans 'My Wishlists' %}</span>
                                     </a>

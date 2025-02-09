@@ -95,7 +95,7 @@
 
                                                                         </i>
                                                                     </a>
-                                                                    <a href="{% url 'shop:detail' pk=product.id %}" class="quick-view hidden-sm-down" data-link-action="quickview">
+                                                                    <a href="{% url 'products:detail' pk=product.id %}" class="quick-view hidden-sm-down" data-link-action="quickview">
                                                                         <i class="fa fa-eye" aria-hidden="true"></i>
                                                                     </a>
                                                                 </div>
@@ -125,12 +125,13 @@
                                                                 </li>
                                                             {% endif %}
                                                             {% for product in products %}
-                                                                <li {% if forloop.counter=1 %}class="current active">{% endif %}
+                                                                <li {% if forloop.counter == 1 %} class="current active"{% endif %}>
                                                                     <a rel="nofollow" href="#" class="disabled js-search-link">
-                                                                        1
+                                                                        {{ forloop.counter }}
                                                                     </a>
                                                                 </li>
                                                             {% endfor %}
+
                                                             {% if page_obj.has_next %}
                                                                 <li>
                                                                     <a rel="next" href="#" class="next disabled js-search-link">
